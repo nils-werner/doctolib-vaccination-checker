@@ -1,0 +1,17 @@
+poll:any:
+  image: python:3.7
+  services:
+    - selenium/standalone-firefox
+  before_script:
+    - pip install -r requirements.txt
+  script:
+    - python poll.py $LOCATION --any --remote-executor --slack-url $ANY_CHANNEL
+
+poll:biontech:
+  image: python:3.7
+  services:
+    - selenium/standalone-firefox
+  before_script:
+    - pip install -r requirements.txt
+  script:
+    - python poll.py $LOCATION --biontech --moderna --remote-executor --slack-url $BIONTECH_CHANNEL

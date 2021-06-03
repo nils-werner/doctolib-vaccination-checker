@@ -1,0 +1,4 @@
+selenium
+slack_sdk
+notify-py
+click
